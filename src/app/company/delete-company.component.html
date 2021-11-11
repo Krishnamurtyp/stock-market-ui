@@ -1,0 +1,25 @@
+<!-- Component to list all Company details-->
+
+<div class="container">
+    <div>
+        <h3>Delete company</h3>
+    </div>
+    <div class="form-group">
+        <!-- <label class="control-label col-sm-3" for="companyCode">Enter Company Code:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="companyCode" placeholder="Enter Company Code">
+        </div> -->
+        <div>
+          <label class="control-label col-sm-3" for="companyName">Company: </label>  
+          <select [(ngModel)]="companyCode" class="form-control" class="col-sm-6">  
+              <option disabled>Select Company</option>  
+              <option *ngFor="let comp of companyList" value="{{comp.companyCode}}" >{{comp.companyName}}</option>  
+          </select>  
+        </div>
+        <div>
+            <div class="col-sm-3">
+              <button (click)="deleteCompany()" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+    </div>
+</div>

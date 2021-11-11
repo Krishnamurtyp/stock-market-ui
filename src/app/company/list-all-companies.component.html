@@ -1,0 +1,32 @@
+<!-- Component to list all Company details-->
+
+<div class="container">
+
+    <div>
+      <h3>List all company details</h3>
+    </div>
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="col-sm-2">Company Code</th>
+          <th class="col-sm-2">Company Name</th>
+          <th class="col-sm-2">CEO</th>
+          <th class="col-sm-2">turnover</th>
+          <th class="col-sm-2">Website</th>
+          <th class="col-sm-2">Latest Stockprice</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let company of companies">
+          <td>{{company.companyCode}}</td>
+          <td>{{company.companyName}}</td>
+          <td>{{company.companyCeo}}</td>
+          <td>{{company.companyTurnover}}</td>
+          <td>{{company.companyWebsite}}</td>
+          <td>{{company.stockPrice}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+</div>

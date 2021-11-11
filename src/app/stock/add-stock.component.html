@@ -1,0 +1,33 @@
+<!-- Component to add stock for company -->
+
+<div class="container">
+
+    <div>
+      <h3>Add stock for company</h3>
+    </div>
+  
+    <div>
+    <!-- <form class="form-horizontal" action="/action_page.php"> -->
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="companyName">Company: </label>  
+       
+          <select [(ngModel)]="companyCode" class="form-control" class="col-sm-9">  
+              <option disabled>Select Company</option>  
+              <option *ngFor="let comp of companyList" value="{{comp.companyCode}}" >{{comp.companyName}}</option>  
+          </select>  
+    </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="stockPrice">Stock Price</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" [(ngModel)]="stockPrice" id="stockPrice" placeholder="Enter Stock Price">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button (click)="addStock()" class="btn btn-default">Submit</button>
+        </div>
+      </div>
+    <!-- </form> -->
+  </div>
+  
+  </div>

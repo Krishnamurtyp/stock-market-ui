@@ -1,0 +1,52 @@
+<!-- Component to Register Company details-->
+<div class="container">
+
+    <div>
+      <h3>Register new company</h3>
+    </div>
+  
+    <form [formGroup]="companyForm" class="form-horizontal" action="/action_page.php">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="companyCode">Company Code:</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="companyCode" class="form-control" id="companyCode" placeholder="Enter Company Code">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="companyName">Company Name:</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="companyName" class="form-control" id="companyName" placeholder="Enter Company Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="companyCeo">Company CEO:</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="companyCeo" class="form-control" id="companyCeo" placeholder="Enter Company CEO">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="companyTurnover">Company Turnover:</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="companyTurnover" class="form-control" id="companyTurnover" placeholder="Enter Company Turnover">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="companyWebsite">Company Website:</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="companyWebsite" class="form-control" id="companyWebsite" placeholder="Enter Company Website">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="stockExchange">Stock Exchange:</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="stockExchange" class="form-control" id="stockExchange" placeholder="Enter Stock Exchange">
+        </div>
+      </div>
+      <div>
+        <div class="col-sm-offset-2 col-sm-10">
+          <button (click)="onRegisterCompany()" class="btn btn-default">Submit</button>
+        </div>
+      </div>
+    </form>
+  
+  </div>

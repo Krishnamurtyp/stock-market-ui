@@ -1,0 +1,77 @@
+<!-- Component to display selected company stock details-->
+
+<div class="container">
+
+    <div>
+      <h3>Stock Details for selected company</h3>
+    </div>
+  
+    <!-- <div class="form-group">
+      <label class="control-label col-sm-offset-2 col-sm-2" for="companyCode">Company Code</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" [(ngModel)]="companyCode" id="companyCode">
+      </div>
+    </div> -->
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="companyName">Company: </label>  
+   
+      <select [(ngModel)]="companyCode" class="form-control" class="col-sm-9">  
+          <option disabled>Select Company</option>  
+          <option *ngFor="let comp of companyList" value="{{comp.companyCode}}" >{{comp.companyName}}</option>  
+      </select>  
+</div>
+    <div class="form-group">
+      <div>
+        <label class="control-label col-sm-offset-2 col-sm-2" for="startDate">From</label>
+        <div class="col-sm-2">
+          <input type="date" class="form-control" [(ngModel)]="startDate" id="startDate">
+        </div>
+      </div>
+      <div>
+        <label class="control-label col-sm-2" for="endDate">To</label>
+        <div class="col-sm-2">
+          <input type="date" class="form-control" [(ngModel)]="endDate" id="endDate">
+        </div>
+      </div>
+      <div>
+        <div class="col-sm-2">
+          <button (click)="getStockDetailsForCompany()" class="btn btn-default">Search</button>
+        </div>
+      </div>
+    </div>
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="col-sm-4">Company Code</th>
+          <th class="col-sm-4">Stock Price</th>
+          <th class="col-sm-4">Date & Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stock of stockList.allStocks">
+          <td>{{stock.companyCode}}</td>
+          <td>{{stock.stockPrice}}</td>
+          <td>{{stock.stockDate}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="col-sm-4">MAX</th>
+          <th class="col-sm-4">MIN</th>
+          <th class="col-sm-4">AVG</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{stockList.max}}</td>
+          <td>{{stockList.min}}</td>
+          <td>{{stockList.avg}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
