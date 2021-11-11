@@ -58,7 +58,14 @@ export class ViewCompanyStockDetailsComponent implements OnInit {
         this.stockList = response;
       },
       (error: HttpErrorResponse) => {
-        alert(error.message);
+        if (error.status == 400) {
+          alert("Please ensure all inputs are entered!");
+        }  else if (error.status == 401) {
+          alert("Authentication token not provided/Expired");
+          this.authService.logoutUser()
+        } else {
+          alert(error.message);
+        }
       }
     )
   }

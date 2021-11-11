@@ -37,10 +37,13 @@ export class AddStockComponent implements OnInit {
       },
       (error: HttpErrorResponse) => {
         if (error.status == 403) {
-          alert("Session expires, login again")
+          alert("You do not have privileges for this action")
           this.authService.logoutUser
+        } else if (error.status == 401) {
+          alert("Authentication token not provided/Expired");
+          this.authService.logoutUser()
         } else {
-          alert(error.message);
+        alert(error.message)
         }
       }
     )

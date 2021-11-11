@@ -46,7 +46,7 @@ export class RegisterCompanyComponent implements OnInit {
             alert("Authentication token not provided/Expired");
             this.authService.logoutUser()
           }else if (error.status == 400) {
-            alert("Company with this company code already exists!");
+            alert("Please ensure all inputs are entered and company code does not exist");
           } else {
           alert(error.message)
           }
