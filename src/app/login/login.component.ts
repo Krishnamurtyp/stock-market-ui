@@ -36,7 +36,12 @@ export class LoginComponent implements OnInit {
         this._router.navigate(['/list-all-companies']);
       },
       (error: HttpErrorResponse) => {
-        alert(error.message);
+        if (error.status == 401) {
+          alert("Incorrect credentials, please check username/password")
+          this.authService.logoutUser
+        } else {
+          alert(error.message);
+        }
       }
     )
   }

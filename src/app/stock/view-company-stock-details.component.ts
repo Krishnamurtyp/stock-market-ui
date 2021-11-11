@@ -41,8 +41,10 @@ export class ViewCompanyStockDetailsComponent implements OnInit {
       },
       (error: HttpErrorResponse) => {
         if (error.status == 403) {
-          alert("Session expired, login again")
-          this.authService.logoutUser
+          alert("You do not have privileges for this action")
+        } else if (error.status == 401) {
+          alert("Authentication token not provided/Expired");
+          this.authService.logoutUser()
         } else {
           alert(error.message);
         }
